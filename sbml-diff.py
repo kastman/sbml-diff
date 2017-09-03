@@ -1,5 +1,6 @@
 import sbml_diff
 from sbml_diff import *
+import gzip
 import os
 import sys
 import argparse
@@ -50,7 +51,7 @@ if __name__ == '__main__':
     parser.add_argument('--complete', help="If no changes, exit quietly. Otherwise return param table, kinetic table," +
                                            " and DOT output", action="store_true")
 
-    parser.add_argument('infile', type=argparse.FileType('r'), nargs="+", help="List of input SBML files")
+    parser.add_argument('infile', type=argparse.FileType('rb'), nargs="+", help="List of input SBML files")
 
     args = parser.parse_args()
 
@@ -111,6 +112,8 @@ if __name__ == '__main__':
     all_model_names = []
     for inFile in args.infile:
         model_string = inFile.read()
+        if inFile.name.endswith('gz'):
+            model_string = gzip.decompress(model_string)
         all_models.append(model_string)
 
         file_name = os.path.basename(os.path.split(inFile.name)[1])

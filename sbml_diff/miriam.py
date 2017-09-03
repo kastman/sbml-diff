@@ -38,8 +38,8 @@ def align_element(models, element_type):
             if tag_id in all_identifiers.keys() and all_identifiers[tag_id] != identifiers:
                 sys.stderr.write("Cannot match using MIRIAM identifiers: %s id %s has two or more sets of annotations\n"
                                  % (element_type, tag_id))
-                print "Set one: \n", get_identifiers(all_identifiers[tag_id])
-                print "Set two: \n", identifiers
+                print("Set one: \n", get_identifiers(all_identifiers[tag_id]))
+                print("Set two: \n", identifiers)
                 sys.exit()
 
             identifier_values = all_identifiers.values()

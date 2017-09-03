@@ -1,4 +1,4 @@
-from effect_direction import categorise_interaction
+from .effect_direction import categorise_interaction
 
 
 def get_params(model):

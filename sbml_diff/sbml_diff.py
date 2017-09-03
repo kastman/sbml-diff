@@ -1,10 +1,11 @@
 from bs4 import BeautifulSoup
-from accessor_functions import *
-from generate_dot import *
-from DiffObject import DiffObject
-from rate_laws import *
-from miriam import align_models
+from .accessor_functions import *
+from .generate_dot import *
+from .DiffObject import DiffObject
+from .rate_laws import *
+from .miriam import align_models
 from tabulate import tabulate
+import six
 import sys
 import re
 
@@ -160,7 +161,7 @@ class SBMLDiff:
 
             rows.append(rates)
 
-        print tabulate(rows, ["Reaction"] + self.model_names, tablefmt=output_format)
+        print(tabulate(rows, ["Reaction"] + self.model_names, tablefmt=output_format))
 
     def compare_params(self, output_format="simple"):
         """
@@ -197,7 +198,7 @@ class SBMLDiff:
                     self.generate_dot.differences_found = True
             rows.append(row)
 
-        print tabulate(rows, ["Parameter"] + self.model_names, tablefmt=output_format)
+        print(tabulate(rows, ["Parameter"] + self.model_names, tablefmt=output_format))
 
     def diff_events(self):
         """

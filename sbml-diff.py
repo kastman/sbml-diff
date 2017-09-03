@@ -3,7 +3,7 @@ from sbml_diff import *
 import os
 import sys
 import argparse
-from cStringIO import StringIO
+from six import StringIO
 import codecs
 
 if __name__ == '__main__':
@@ -59,8 +59,8 @@ if __name__ == '__main__':
         all_colors = args.colors.split(",")
 
         if len(all_colors) != num_files:
-            print "Error: number of colors (%s) does not match number of input files (%s)\n" %\
-                  (len(all_colors), num_files)
+            print("Error: number of colors (%s) does not match number of input files (%s)\n" %\
+                  (len(all_colors), num_files))
             parser.print_help()
             sys.exit(0)
 
@@ -126,15 +126,15 @@ if __name__ == '__main__':
     if args.complete:
 
         sd.print_rate_law_table()
-        print ""
+        print("")
         sd.compare_params()
-        print ""
+        print("")
         sd.diff_models()
 
         if output_formatter.differences_found:
             # print results
             sys.stdout = old_stdout
-            print f.getvalue()
+            print(f.getvalue())
         else:
             # discard results
             f.close()
@@ -146,11 +146,11 @@ if __name__ == '__main__':
 
         if args.kinetics:
             sd.print_rate_law_table()
-            print ""
+            print("")
 
         if args.params:
             sd.compare_params()
-            print ""
+            print("")
 
         if args.abstract:
             ignored = []
@@ -166,7 +166,7 @@ if __name__ == '__main__':
         if not (args.kinetics or args.params or args.abstract):
             sd.diff_models()
 
-    except RuntimeError, e:
+    except RuntimeError as e:
         sys.exit(e.args[0])
 
     # Print results
@@ -174,6 +174,6 @@ if __name__ == '__main__':
 
     explicit_comparison = args.force or args.params or args.kinetics
     if num_files == 1 or output_formatter.differences_found or explicit_comparison:
-        print f.getvalue()
+        print(f.getvalue())
     else:
-        print "No structural differences found"
+        print("No structural differences found")

@@ -9,7 +9,7 @@ def get_params(model):
     Parameters
     ----------
     model : bs4.BeautifulSoup object produced by parsing an SBML model
-        
+
 
     Returns
     -------
@@ -43,11 +43,11 @@ def get_regulatory_arrow(model, compartment, reactions, species_compartments, in
     Parameters
     ----------
     model : bs4.BeautifulSoup object produced by parsing an SBML model
-        
+
     compartment : the id of a compartment
 
     elided_reactions : a list of reactions, for which the corresponding reactions are not drawn
-        
+
 
     Returns
     -------
@@ -98,9 +98,9 @@ def get_species(model, compartment_id):
     Parameters
     ----------
     model : bs4.BeautifulSoup object produced by parsing an SBML model
-        
+
     compartment_id : the id of a compartment
-        
+
 
     Returns
     -------
@@ -124,9 +124,9 @@ def get_species_compartment(model, species_id, species_compartments):
     Parameters
     ----------
     model : bs4.BeautifulSoup object produced by parsing an SBML model
-        
+
     species_id : id of the species
-        
+
 
     Returns
     -------
@@ -235,7 +235,7 @@ def get_reactions(model):
     Parameters
     ----------
     model : bs4.BeautifulSoup object produced by parsing an SBML model
-        
+
 
     Returns
     -------
@@ -260,9 +260,9 @@ def get_rule_details(model, target_id, species_compartments):
     Parameters
     ----------
     model : bs4.BeautifulSoup object produced by parsing an SBML model
-        
+
     target_id : the id of the species being affected
-        
+
 
     Returns
     -------
@@ -312,7 +312,7 @@ def get_variables_set_by_rules(model):
     Parameters
     ----------
     model : bs4.BeautifulSoup object produced by parsing an SBML model
-        
+
 
     Returns
     -------
@@ -339,9 +339,9 @@ def get_species_name(model, species_id):
     Parameters
     ----------
     model : bs4.BeautifulSoup object produced by parsing an SBML model
-        
+
     species_id : id of the species
-        
+
 
     Returns
     -------
@@ -362,9 +362,9 @@ def get_reaction_name(model, reaction_id):
     Parameters
     ----------
     model : bs4.BeautifulSoup object produced by parsing an SBML model
-        
+
     reaction_id : id of the reaction
-        
+
 
     Returns
     -------

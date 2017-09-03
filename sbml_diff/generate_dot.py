@@ -1,6 +1,6 @@
 class GenerateDot:
     """This class actually generates the DOT output.
-    
+
     It has no dependency on BeautifulSoup, and works with strings, rather than BeautifulSoup objects.
 
     The print_ functions accept an argument model_set, which specifies which models contain the corresponding feature.
@@ -270,7 +270,7 @@ class GenerateDot:
         Parameters
         ----------
         model_set : list of model numbers containing the feature
-            
+
         base_style : other style attributes that must be applied (e.g. dashed, or a fillcolor)
              (Default value = '')
 
@@ -296,11 +296,11 @@ class GenerateDot:
         Parameters
         ----------
         model_set : list of model numbers containing the feature
-            
+
         reaction_id : id of the reaction
-            
+
         reactant : id of the reactant
-            
+
         stoich : stoichiometry of this reactant for this reaction
 
 
@@ -329,11 +329,11 @@ class GenerateDot:
         Parameters
         ----------
         model_set : list of model numbers containing the feature
-            
+
         reaction_id : id of the reaction
-            
+
         product : id of the product
-            
+
         stoich : stoichiometry of this product for this reaction
 
 
@@ -433,13 +433,13 @@ class GenerateDot:
         Parameters
         ----------
         model_set : list of model numbers containing the feature
-            
+
         reaction_id : id of the reaction
-            
+
         rate_law : bs4.element.Tag specifying the kineticLaw
-            
+
         reaction_name : name of the reaction
-            
+
         converted_law : human-readable string representation of the kineticLaw
 
         fast_model_set : list of indexes for models in which this reaction is fast
@@ -511,9 +511,9 @@ class GenerateDot:
         Parameters
         ----------
         model_set : list of model numbers containing the feature
-            
+
         species_id : id of a species
-            
+
         species_name : name of a species
         """
         color = self.assign_color(model_set)
@@ -537,9 +537,9 @@ class GenerateDot:
         Parameters
         ----------
         model_set : list of model numbers containing the feature
-            
+
         arrow_main : the DOT edge_stmt for the edge (eg. 'A -> B')
-            
+
         arrow_direction : string representing kind of interaction - 'monotonic_increasing' (activation) or
         'monotonic_decreasing' (repression)
         """
@@ -555,9 +555,9 @@ class GenerateDot:
         Parameters
         ----------
         model_set : list of model numbers containing the feature
-            
+
         rule_id : id of the rule
-            
+
         modifier : id of the species affecting the rule
 
         arrow_direction : string representing kind of interaction - 'monotonic_increasing' (activation) or
@@ -611,9 +611,9 @@ class GenerateDot:
         Parameters
         ----------
         model_set : list of model numbers containing the feature
-            
+
         rule_id : id of the rule
-            
+
         rate_law :
 
         converted_rate_law :
@@ -647,11 +647,11 @@ class GenerateDot:
         Parameters
         ----------
         model_set : list of model numbers containing the feature
-            
+
         modifier : id of species affecting the target
-            
+
         target : id of species affected by this interaction
-            
+
         effect_type : type of interaction ("increase-degredation", "decrease-degredation",
         "decrease-degredation", "increase-production")
         """

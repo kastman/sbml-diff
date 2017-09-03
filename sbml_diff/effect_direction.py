@@ -11,9 +11,9 @@ def categorise_interaction(kinetic_law, species_id, initial_values, use_sympy=Fa
     Parameters
     ----------
     kinetic_law : bs4.element.Tag corresponding to a kineticLaw
-        
+
     species_id : the species id
-        
+
 
     Returns
     -------
@@ -83,11 +83,11 @@ def check_sign_numerically(expr, param_names, species_id, initial_values):
     Parameters
     ----------
     expr : bs4.element.Tag object corresponding to the contents of a math element
-        
+
     param_names : list of the names of all parameters
-        
+
     species_id : list of the species we are interested in
-        
+
 
     Returns
     -------
